@@ -1,0 +1,22 @@
+#!/command/with-contenv bash
+# SPDX-FileCopyrightText: © 2024 Dave Conroy <dave@tiredofit.ca>
+#
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: © 2024 Dave Conroy <dave@tiredofit.ca>
+#
+# SPDX-License-Identifier: MIT
+
+source /container/base/functions/container/init
+PROCESS_NAME="eturnal"
+prepare_service 10-eturnal
+
+check_container_initialized
+check_service_initialized init
+
+liftoff
+
+print_start "Starting Eturnal ${ETURNAL_VERSION}"
+silent exec sudo -u \${ETURNAL_USER} \
+                                        eturnalctl foreground \
+                                        ${ETURNAL_ARGS}
+

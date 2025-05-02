@@ -1,3 +1,10 @@
+## 1.1.1 2025-05-02 <dave at tiredofit dot ca>
+
+   ### Added
+      - Alpine 3.21 base
+      - Eturnal 1.12.2
+
+
 ## 1.1.0 2024-07-02 <dave at tiredofit dot ca>
 
    ### Added

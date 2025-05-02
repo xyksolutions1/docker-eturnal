@@ -1,0 +1,18 @@
+#!/command/with-contenv bash
+# SPDX-FileCopyrightText: © 2024 Dave Conroy <dave@tiredofit.ca>
+#
+# SPDX-License-Identifier: MIT
+# SPDX-FileCopyrightText: © 2024 Dave Conroy <dave@tiredofit.ca>
+#
+# SPDX-License-Identifier: MIT
+
+source /container/base/functions/container/init
+set -a
+prepare_service 10-eturnal
+set +a
+PROCESS_NAME="eturnal"
+
+bootstrap_filesystem
+configure_eturnal
+echo "alias eturnalctl='sudo -u \${ETURNAL_USER} eturnalctl'" >> /root/.bashrc
+liftoff

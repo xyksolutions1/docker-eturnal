@@ -1,12 +1,12 @@
 ARG DISTRO=alpine
-ARG DISTRO_VARIANT=3.20
+ARG DISTRO_VARIANT=3.21
 
 FROM docker.io/tiredofit/${DISTRO}:${DISTRO_VARIANT}
 LABEL maintainer="Dave Conroy (github.com/tiredofit)"
 
 ARG ETURNAL_VERSION
 
-ENV ETURNAL_VERSION=1.12.0 \
+ENV ETURNAL_VERSION=1.12.2 \
     ETURNAL_REPO_URL=https://github.com/processone/eturnal \
     ETURNAL_USER=${ETURNAL_USER:-"eturnal"} \
     ETURNAL_GROUP=${ETURNAL_GROUP:-"eturnal"} \
